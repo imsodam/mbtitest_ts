@@ -5,7 +5,6 @@ import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 
 function MainPage(): React.ReactElement {
-
   const navigate = useNavigate();
 
   const handleClickButton = () => {
@@ -36,6 +35,7 @@ function MainPage(): React.ReactElement {
             테스트 시작하기
           </Button>
         </ContentsWrapper>
+        <div className="adfit" />
       </Wrapper>
     </>
   );
