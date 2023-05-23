@@ -1,26 +1,27 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Button, Image } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-
-import CatImage from '../assets/cat/cat1.jpg';
 import Header from '../components/Header';
+
 function MainPage(): React.ReactElement {
+
   const navigate = useNavigate();
 
   const handleClickButton = () => {
     navigate('/question');
   };
+
   return (
     <>
       <Wrapper>
-        <Header type="title" questionNo={0}/>
+        <Header type="title" questionNo={0} />
         <ContentsWrapper>
           <Title>나에게 맞는 주인님은?!</Title>
           <LogoImage>
-            <Image
+            <img
               className="rounded-circle"
-              src={CatImage}
+              src="./img/cat1.jpg"
               width={350}
               height={350}
             />

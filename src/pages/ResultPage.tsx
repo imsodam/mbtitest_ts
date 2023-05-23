@@ -5,14 +5,14 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 
 import { ResultData } from '../stores/Result/ResultData';
 import Header from '../components/Header';
-import CatImage from '../assets/cat/cat1.jpg';
+import {IResult} from '../stores/Result/types'
 
 function ResultPage(): React.ReactElement {
   const [searchParams] = useSearchParams();
   const mbti = searchParams.get('mbti'); // 예비집사의 MBTI
-  const TestResult = ResultData.find((cat: IResult) => cat.best === mbti);
-  //console.log({TestResult})
-  const friendCat = ResultData.find(friend => friend.best === TestResult?.mbti);
+  const testResult = ResultData.find((cat: IResult) => cat.best === mbti);
+  //console.log({testResult})
+  const friendCat = ResultData.find((friend) => friend.best === testResult?.mbti);
 
   return (
     <>
@@ -23,17 +23,17 @@ function ResultPage(): React.ReactElement {
           <ResultImage>
             <Image
               className="rounded-circle"
-              src={TestResult?.image}
+              src={testResult?.image}
               width={350}
               height={350}
             />
           </ResultImage>
           <Desc>
-            {TestResult?.best}형 예비집사님과 찰떡궁합인 고양이는{' '}
-            {TestResult?.mbti}형 고양이 {TestResult?.name} 입니다.
+            {testResult?.best}형 예비집사님과 찰떡궁합인 고양이는{' '}
+            {testResult?.mbti}형 고양이 {testResult?.name} 입니다.
           </Desc>
           <Desc>
-            {TestResult?.name} 고양이는 {TestResult?.desc}
+            {testResult?.name} 고양이는 {testResult?.desc}
           </Desc>
           <BestDesc>
             나의 고양이와 잘맞는 형제묘로는 {friendCat?.name} 추천드려요.

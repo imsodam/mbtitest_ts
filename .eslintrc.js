@@ -9,6 +9,8 @@ module.exports = {
     sourceType: 'module',
     ecmaFeatures: { jsx: true },
   },
-  rules: {},
+  rules: {
+    '@typescript-eslint/no-var-requires': 0,
+  },
   settings: { react: { version: 'detect' } },
 };
