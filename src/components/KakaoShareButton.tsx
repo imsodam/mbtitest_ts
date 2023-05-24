@@ -10,7 +10,7 @@ interface Props {
 
 let url = 'https://mbtitesttypescript.netlify.app';
 
-React.useEffect(() => {
+useEffect(() => {
   Kakao.init('a7071df2766b22833a16fd7946c7f4a2');
 }, []);
 
