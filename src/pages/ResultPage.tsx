@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Image } from 'react-bootstrap';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, useNavigate } from 'react-router-dom';
 import { ResultData } from '../stores/Result/ResultData';
 import Header from '../components/Header';
 import { IResult } from '../stores/Result/types';
@@ -23,6 +23,8 @@ function ResultPage(): React.ReactElement {
   //console.log({testResult})
   const friendCat = ResultData.find(friend => friend.best === testResult?.mbti);
 
+  const navigate = useNavigate()
+  
   return (
     <>
       <Wrapper>
@@ -49,6 +51,7 @@ function ResultPage(): React.ReactElement {
           </BestDesc>
           <div style={{ marginBottom: 30 }}>
             <button
+              onClick={()=> navigate("/")}
               className="btn-danger"
               style={{ width: 170, marginTop: 20, marginRight: 20 }}
             >
